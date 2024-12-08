@@ -1,0 +1,54 @@
+<section class="bg-gray-50 dark:bg-gray-900 min-h-screen" style="background-image: url('unajmafondo.jpg'); background-size: cover; background-position: center;">
+    <div class="flex flex-col items-center justify-center px-4 py-6 mx-auto min-h-screen">
+        <div class="w-full bg-white rounded-lg shadow dark:border xl:max-w-4xl lg:max-w-3xl dark:bg-gray-800 dark:border-gray-700">
+            <div class="flex flex-col md:flex-row">
+                <div class="hidden md:block md:w-2/5 bg-blue-900 text-white rounded-l-lg relative">
+                    <img src="unajmaperfil.jpg" alt="fondo" class="w-full h-full object-cover rounded-l-lg">
+                </div>
+                <div class="p-6 space-y-4 md:space-y-6 sm:p-8 w-full md:w-3/5">
+                    <a class="flex items-center mb-4 text-2xl font-semibold text-gray-900 dark:text-white">
+                        <img class="w-8 h-8 mr-2" src="logounajma.png" alt="logounajma">
+                        AylluNet</a>
+                    <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                        Iniciar sesión
+                    </h1>
+                    <form class="space-y-4 md:space-y-6" [formGroup]="form" (ngSubmit)="submit()">
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                Tu correo electrónico
+                            </label>
+                            <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                            placeholder="codigo@unajma.edu.pe" formControlName="email" required="">
+                            @if (isRequired('email')) {
+                                <small class="text-red-600">Este campo es requerido </small>
+                            }
+                            @if (hasEmailError()) {
+                                <small class="text-red-600">El correo debe ser válido </small>
+                            }
+                        </div>
+                        <div>
+                            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                Contraseña
+                            </label>
+                            <input type="password" name="password" id="password" placeholder="••••••••" formControlName="password" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+                            @if (isRequired('password')) {
+                                <small class="text-red-600">Este campo es requerido </small>
+                            }
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <a routerLink="/auth/recover-password" class="text-sm font-medium text-green-600 hover:underline dark:text-green-500">¿Has olvidado tu contraseña?</a>
+                        </div>
+                        <button type="submit" class="w-full text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                            Iniciar sesión
+                        </button>
+                        <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                            ¿Aún no tienes una cuenta? 
+                            <a routerLink="/auth/sign-up" class="font-medium text-green-600 hover:underline dark:text-green-500">Crear cuenta aquí</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ 

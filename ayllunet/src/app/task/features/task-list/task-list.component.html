@@ -1,0 +1,122 @@
+<section class="bg-gray-50 dark:bg-gray-900 min-h-screen" style="background-image: url('unajmafondo.jpg'); background-size: cover; background-position: center;">
+    <div class="flex flex-col items-center justify-center px-4 py-6 mx-auto min-h-screen">
+      
+      <!-- Botón de Cerrar Sesión en la parte superior derecha -->
+      <button
+        class="absolute top-0 right-0 m-6 bg-orange-600 text-white py-2 px-6 rounded-full shadow-md hover:bg-orange-700 transition duration-300"
+        (click)="logOut()"
+      >
+        Cerrar sesión
+      </button>
+  
+      <form class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-lg" (ngSubmit)="onSubmit()">
+        <h2 class="text-3xl font-semibold mb-8 text-center text-gray-800">Crear Perfil</h2>
+  
+        <!-- Campo de Nombre -->
+        <div class="mb-6">
+          <label for="firstName" class="block text-sm font-medium text-gray-700">Nombre</label>
+          <input
+            id="firstName"
+            type="text"
+            class="mt-2 p-4 w-full border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-700"
+            name="firstName"
+            required
+          />
+        </div>
+  
+        <!-- Campo de Apellido -->
+        <div class="mb-6">
+          <label for="lastName" class="block text-sm font-medium text-gray-700">Apellido</label>
+          <input
+            id="lastName"
+            type="text"
+            class="mt-2 p-4 w-full border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-700"
+            name="lastName"
+            required
+          />
+        </div>
+  
+        <!-- Campo de Carrera Profesional (select) -->
+        <div class="mb-6">
+          <label for="career" class="block text-sm font-medium text-gray-700">Carrera Profesional</label>
+          <select
+            id="career"
+            class="mt-2 p-4 w-full border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-700"
+            name="career"
+            required
+          >
+            <option value="">Seleccione una carrera</option>
+            <option value="EPIS">EPIS</option>
+            <option value="EPIA">EPIA</option>
+            <option value="EPIAM">EPIAM</option>
+            <option value="EPC">EPC</option>
+          </select>
+        </div>
+  
+        <!-- Campo de Ciclo (select) -->
+        <div class="mb-6">
+          <label for="cycle" class="block text-sm font-medium text-gray-700">Ciclo</label>
+          <select
+            id="cycle"
+            class="mt-2 p-4 w-full border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-700"
+            name="cycle"
+            required
+          >
+            <option value="">Seleccione el ciclo</option>
+            <option value="I">I Ciclo</option>
+            <option value="II">II Ciclo</option>
+            <option value="III">III Ciclo</option>
+            <option value="IV">IV Ciclo</option>
+            <option value="V">V Ciclo</option>
+            <option value="VI">VI Ciclo</option>
+            <option value="VII">VII Ciclo</option>
+            <option value="VIII">VIII Ciclo</option>
+            <option value="IX">IX Ciclo</option>
+            <option value="X">X Ciclo</option>
+          </select>
+        </div>
+  
+        <!-- Campo de Fecha de Nacimiento -->
+        <div class="mb-6">
+          <label for="birthdate" class="block text-sm font-medium text-gray-700">Fecha de Nacimiento</label>
+          <input
+            id="birthdate"
+            type="date"
+            class="mt-2 p-4 w-full border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-700"
+            name="birthdate"
+            required
+          />
+        </div>
+  
+        <!-- Campo de Foto -->
+        <div class="mb-6">
+          <label for="photo" class="block text-sm font-medium text-gray-700">Foto de Perfil</label>
+          <div class="relative">
+            <input
+              id="photo"
+              type="file"
+              class="mt-2 p-4 w-full border border-gray-300 rounded-xl text-gray-700 file:border-none file:bg-blue-600 file:text-white file:px-4 file:py-2 hover:file:bg-blue-700 cursor-pointer"
+              (change)="onFileSelected($event)"
+              name="photo"
+            />
+            <div class="absolute top-1 right-1 p-2 bg-orange-500 rounded-full text-white cursor-pointer hover:bg-orange-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.121a4 4 0 010-5.656L10 7.293m4.243-4.243L17.121 5.12a4 4 0 015.657 5.657L13 12m-2-2L5.121 17.12a4 4 0 010-5.657L12 10z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Botón de Continuar -->
+        <div class="mt-8 text-center">
+          <button
+            type="submit"
+            class="w-full bg-orange-600 text-white py-3 px-6 rounded-full shadow-md hover:bg-orange-700 transition duration-300"
+          >
+            Continuar
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+  
